@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masuk ke Danenote</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- ===== Kolom kanan: formulir login ===== -->
+    <section class="form-area">
+      <div class="form-box">
+
+        <a href="#" class="logo" aria-label="Danenote, beranda">
+          <img src="images/logo.svg" alt="" width="32" height="32">
+          Danenote
+        </a>
+
+        <h1>Masuk</h1>
+
+        <button type="button" class="btn-social"><span class="g">G</span> Masuk dengan Google</button>
+        <button type="button" class="btn-half first">Apple</button><button type="button" class="btn-half">Facebook</button>
+
+        <div class="divider"><span>atau</span></div>
+
+        <form action="#" method="post">
+          <label for="email">Email atau nama pengguna</label>
+          <input type="text" id="email" name="email" placeholder="Email" required>
+
+          <label for="password">Kata sandi</label>
+          <div class="password-box">
+            <input type="password" id="password" name="password" placeholder="Kata sandi" required>
+            <button type="button" id="toggle" class="toggle-btn" aria-label="Tampilkan kata sandi">👁</button>
+          </div>
+
+          <p class="forgot"><a href="#">Lupa kata sandi?</a></p>
+
+          <input type="checkbox" id="remember" name="remember">
+          <label for="remember" class="remember-label">Ingat saya</label>
+
+          <button type="submit" class="btn-signin">Masuk</button>
+        </form>
+
+        <p class="signup-text">Belum punya akun? <a href="#">Daftar</a></p>
+
+      </div>
+    </section>
+
+    <!-- ===== Kolom kiri: ilustrasi ===== -->
+    <section class="art" aria-label="Tentang Danenote">
+      <div class="sun"></div>
+
+      <blockquote class="quote">
+        <p>Semua catatan kini menjadi rapi di satu tempat.</p>
+        <footer>Ahmad Zidane, Mahasiswa Politeknik Negeri Jakarta</footer>
+      </blockquote>
+    </section>
+
+  </main>
+
+  <!-- Opsional: hanya untuk tombol lihat/sembunyikan kata sandi -->
+  <script>
+    var tombol = document.getElementById("toggle");
+    var inputPassword = document.getElementById("password");
+
+    tombol.onclick = function () {
+      if (inputPassword.type === "password") {
+        inputPassword.type = "text";
+        tombol.setAttribute("aria-label", "Sembunyikan kata sandi");
+      } else {
+        inputPassword.type = "password";
+        tombol.setAttribute("aria-label", "Tampilkan kata sandi");
+      }
+    };
+  </script>
+
+</body>
+</html>
